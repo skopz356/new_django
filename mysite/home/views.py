@@ -1,7 +1,7 @@
 from django.shortcuts import render,get_object_or_404
 from django.http import HttpResponse
 
-from .models import Page 
+from .models import Page,Subject 
 
 # Create your views here.
 '''  '''
@@ -14,10 +14,9 @@ def index(request):
     return render(request,'home/index.html',arg)
 
 def page(request,page):
-   
     p = get_object_or_404(Page, title=page)
-    arg = {'page':p
+    s = get_object_or_404(Subject, name="Neco")
+    arg = {'page':p,
+    'product':s
     }
-    
-
     return render(request, 'home/index.html', arg)
