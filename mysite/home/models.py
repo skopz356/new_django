@@ -18,7 +18,7 @@ class Category(models.Model):
 
 
 class Subject(models.Model):
-    category = models.ForeignKey('Page', on_delete=models.CASCADE, default=5)
+    category = models.ForeignKey('Category', on_delete=models.CASCADE, default=5)
     name = models.CharField(max_length=50)
     info = models.CharField(max_length=300)
     prize= models.FloatField(max_length=20)
